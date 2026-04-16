@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sadri Health Services</title>
+  <link rel="icon" href="images/logo.ico" type="image/x-icon"/>
+  <meta name="description" content="Sadri Health Services is a professional healthcare organization based in Islamabad, Pakistan, offering trusted medical care and health consultations. Contact us for personalized healthcare solutions." />
+  <meta name="keywords" content="Sadri Health Services, Islamabad clinic, healthcare Pakistan, medical services Islamabad, Sadri Health Organization, cupping, hijjama, contact doctor, health consultation, F-10 Markaz clinic, medical center Islamabad, private clinic Pakistan, hijama, cupping, prp in isalamabad" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bot.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Sadri Health Services",
+  "url": "https://sadri.info",
+  "logo": "https://sadri.info/images/logo.png",
+  "image": "https://sadri.info/images/logo.png",
+  "description": "Sadri Health Services is a leading healthcare clinic in Islamabad offering professional Hijama (Cupping Therapy), PRP treatments, Homeopathy, Nutritional Counseling, and Natural Healing Services.",
+  "medicalSpecialty": [
+    "Homeopathic",
+    "Dermatology",
+    "Nutrition",
+    "InternalMedicine",
+    "AlternativeMedicine"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "13-14, 1st Floor, Capital Trade Center, F-10 Markaz",
+    "addressLocality": "Islamabad",
+    "addressRegion": "ICT",
+    "postalCode": "44000",
+    "addressCountry": "PK"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+92-333-6202688",
+    "contactType": "Customer Support",
+    "areaServed": "PK",
+    "availableLanguage": ["English", "Urdu"]
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "10:00",
+    "closes": "20:00"
+  },
+  "sameAs": [
+    "https://www.facebook.com/share/19k5NHyg1z/",
+    "https://www.instagram.com/sadrihealthservices?igsh=MWE0dnBocnlxNnloMA=="
+  ],
+  "department": [
+    {
+      "@type": "MedicalDepartment",
+      "name": "Hijama (Cupping Therapy)",
+      "description": "Professional Hijama treatment with certified practitioners. Helps with migraines, stress, fertility, and overall wellness.",
+      "medicalSpecialty": "AlternativeMedicine"
+    },
+    {
+      "@type": "MedicalDepartment",
+      "name": "PRP Hair and Skin Treatments",
+      "description": "Advanced PRP treatments for hair regrowth and facial rejuvenation. Safe, effective, and natural.",
+      "medicalSpecialty": "Dermatology"
+    },
+    {
+      "@type": "MedicalDepartment",
+      "name": "Homeopathy",
+      "description": "Personalized homeopathic remedies for chronic conditions, immunity, and internal healing.",
+      "medicalSpecialty": "Homeopathic"
+    },
+    {
+      "@type": "MedicalDepartment",
+      "name": "Diet & Nutrition Counseling",
+      "description": "Customized nutrition plans for weight loss, diabetes, hormonal balance, and general well-being.",
+      "medicalSpecialty": "Nutrition"
+    },
+    {
+      "@type": "MedicalDepartment",
+      "name": "Infertility & Reproductive Health",
+      "description": "Holistic support for male/female infertility, menstrual disorders, and reproductive health issues.",
+      "medicalSpecialty": "InternalMedicine"
+    }
+  ]
+}
+</script>
+
+<style>
+.bya-navbar {
+  background-color: #e0f2ff;
+  color: #007acc;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* Hide navbar button on mobile */
+@media screen and (max-width: 768px) {
+  .bya-navbar {
+    display: none;
+  }
+}
+
+.bya-navbar:hover {
+  background-color: #cceaff;
+  color: #005f99;
+  border: 2px solid #99d6ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.bya-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #e0f2ff;
+  color: #007acc;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  z-index: 9999;
+  display: none;
+  font-size: 15px;
+}
+
+/* Show only on small screens */
+@media screen and (max-width: 768px) {
+  .bya-floating {
+    display: inline-block;
+  }
+}
+
+.bya-floating:hover {
+  background-color: #cceaff;
+  color: #005f99;
+  border: 2px solid #99d6ff;
+  transform: scale(1.05);
+}
+
+/* Fullscreen overlay */
+.popup-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Popup box */
+.popup-alert {
+  background: #fff;
+  border-radius: 16px;
+  padding: 0px;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* Image styling */
+.popup-content img {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+}
+
+/* Text section */
+.text-content h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #d84315;
+}
+
+.text-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .popup-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 15px;
+  }
+
+  .popup-content img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .text-content h2 {
+    font-size: 20px;
+  }
+
+  .text-content p {
+    font-size: 15px;
+  }
+}
+
+
+</style>
+</head>
+<body>
+
+
+  <!-- Header -->
+  <header class="navbar">
+  <div class="logo-container">
+    <img src="images/logo.png" alt="Sadri 1971" class="logo" />
+  </div>
+
+  <nav id="nav-menu" class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#ser">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div id="hamburger-btn" class="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <a href="public/appointment.html" class="bya-navbar">Book Your Appointment</a>
+</header>
+
+<section class="home-section">
+  <div class="home-overlay">
+    <div class="home-content">
+      <h1 class="animate-slide-up">
+  Welcome to <span style="color: #00bfff;">Sadri Health Services</span>
+</h1>
+      <h2 class="typing-text"></h2><br><br>
+      <a href="public/appointment.html" class="home-btn">Book Your Appointment Now !</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- About Us Section -->
+<section id="about" class="about-section">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>About Sadri Health Services</h2>
+      <p class="animate-slide-up">
+        <strong>Sadri Health Services</strong> is a renowned holistic clinic (<strong>since 1971</strong>) dedicated to providing comprehensive and integrative <span>healthcare solutions</span>. Our mission is to harmonize traditional healing practices with modern technologies, promoting optimal health and well-being.
+        We are committed to affordable, compassionate care with expert guidance.
+      </p>
+    </div>
+    <section class="founder-message animate-slide-up" style="text-align: center; padding: 4rem 1rem;">
+  <h2 style="color: #007B8A; margin-bottom: 1rem;">Message from Dr. Muhammad Amin Baig</h2>
+  <p style="max-width: 800px; margin: auto; font-size: 1.1rem;">
+    “At Sadri Health Services, we believe healing should go beyond just medicine — it should restore hope, energy, and balance to your life. Since 1971, our mission has been to bring safe, holistic care rooted in tradition, trust, and compassion.”
+  </p>
+  <p style="font-weight: 600; margin-top: 1rem;">– Founder, Sadri Health Organization</p>
+</section>
+
+    <div class="about-cards">
+      <div class="about-card mission animate-slide-up">
+        <h3>Our Mission</h3>
+        <p>
+          To provide holistic, accessible, and trustworthy healthcare for everyone, enhancing quality of life through personalized treatment.
+        </p>
+      </div>
+      <div class="about-card vision animate-slide-up">
+        <h3>Our Vision</h3>
+        <p>
+          To be Pakistan's most trusted wellness center combining nature, science, and compassionate healing.
+        </p>
+      </div>
+    </div>
+
+    <section style="text-align: center; padding: 3rem 1rem; background-color: #f0f9ff;" class="animate-slide-up">
+  <h2 style="color: #007B8A;">Affiliations & Certifications</h2>
+  <p>We are registered with:</p>
+  <ul style="list-style: none; padding: 0; font-weight: 600;">
+    <li>✔ National Council for Tibb</li>
+    <li>✔ Homeopathic Medical Association of Pakistan</li>
+    <li>✔ Alternative Medicine Council</li>
+  </ul>
+</section>
+
+<div class="our-team animate-slide-up">
+  <h2>Our Team</h2>
+  <p>
+    Our experienced and dedicated team of practitioners includes:
+  </p>
+  <ul>
+    <li><strong>Ayurvedic Practitioners:</strong> Experts in traditional Ayurvedic medicine.</li>
+    <li><strong>Unani Specialists:</strong> Knowledgeable in natural therapies and herbal treatments.</li>
+    <li><strong>Homoeopaths:</strong> Skilled in gentle yet effective healing approaches.</li>
+    <li><strong>Acupuncturists:</strong> Trained in traditional Chinese medicine.</li>
+    <li><strong>Aesthetic Technicians:</strong> Experienced in advanced beauty solutions.</li>
+  </ul>
+</div>
+<!-- Patient Stats -->
+<section class="patient-stats animate-slide-up" style="text-align: center; padding: 4rem 1rem;">
+  <h2 style="color: #007B8A; margin-bottom: 2rem;">Our Impact</h2>
+  <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+    <div class="stat-box">
+      <div class="counter" data-target="8000">0</div>
+      <p>Patients Healed</p>
+    </div>
+    <div class="stat-box">
+      <div class="counter" data-target="37">0</div>
+      <p>Years of Healing</p>
+    </div>
+    <div class="stat-box">
+      <div class="counter" data-target="95">0</div>
+      <p>% Satisfaction Rate</p>
+    </div>
+  </div>
+</section>
+    <!-- Core Values Section -->
+<section class="core-values animate-slide-up" style="text-align: center; padding: 4rem 1rem; background: #f7fafd;">
+  <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #007B8A;">Our Core Values</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+    <div class="value-card">
+      <i class="fas fa-heartbeat"></i>
+      <h4>Compassionate Care</h4>
+      <p>We treat every patient with empathy and kindness.</p>
+    </div>
+    <div class="value-card">
+      <i class="fas fa-microscope"></i>
+      <h4>Evidence-Based Healing</h4>
+      <p>We combine traditional and modern, science-backed therapies.</p>
+    </div>
+    <div class="value-card">
+      <i class="fas fa-hand-holding-usd"></i>
+      <h4>Affordability</h4>
+      <p>High-quality treatments at accessible prices.</p>
+    </div>
+    <div class="value-card">
+      <i class="fas fa-user-md"></i>
+      <h4>Patient-Centered</h4>
+      <p>Customized treatments for your individual needs.</p>
+    </div>
+  </div>
+</section>
+<!-- Our Methodology -->
+<section class="methodology animate-slide-up" style="text-align: center; padding: 4rem 1rem; background: #f0f9ff;">
+  <h2 style="color: #007B8A; margin-bottom: 2rem;">Our Healing Process</h2>
+  <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+    <div class="step-box">
+      <i class="fas fa-comments"></i>
+      <h4>1. Free Consultation</h4>
+      <p>We listen carefully to understand your needs and guide you honestly.</p>
+    </div>
+    <div class="step-box">
+      <i class="fas fa-stethoscope"></i>
+      <h4>2. Personalized Diagnosis</h4>
+      <p>We evaluate your condition holistically to plan a custom treatment.</p>
+    </div>
+    <div class="step-box">
+      <i class="fas fa-leaf"></i>
+      <h4>3. Holistic Treatment</h4>
+      <p>We apply nature-based healing strategies tailored for you.</p>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+
+<section id="ser" class="services-section animate-slide-up">
+  <h2>Our Services</h2>
+  <p class="section-intro">We offer a diverse range of traditional and modern health treatments tailored to your well-being.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <i class="fas fa-spa"></i>
+      <h3>Hijama (Cupping)</h3>
+      <p>Ancient therapy for detoxification and pain relief performed by trained professionals.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-syringe"></i>
+      <h3>PRP Therapy</h3>
+      <p>Platelet-rich plasma treatments to restore skin and hair health naturally.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-leaf"></i>
+      <h3>Homeopathy</h3>
+      <p>Gentle, individualized remedies based on your symptoms and constitution.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-apple-alt"></i>
+      <h3>Diet & Nutrition</h3>
+      <p>Custom dietary plans for wellness, weight management, and health conditions.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-hand-holding-heart"></i>
+      <h3>Infertility Support</h3>
+      <p>Natural reproductive health treatments for men and women.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-magic"></i>
+      <h3>Beauty & Skin</h3>
+      <p>Facial, glow, and rejuvenation therapies combining nature & science.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-seedling"></i>
+      <h3>Acupuncture</h3>
+      <p>Traditional Chinese therapy to relieve pain and restore energy flow.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-pills"></i>
+      <h3>Unani Medicine</h3>
+      <p>Ancient Greco-Arab healing based on natural herbs and balance of humors.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-yin-yang"></i>
+      <h3>Ayurvedic Healing</h3>
+      <p>Holistic Indian system of healing using herbs, oils, and lifestyle practices.</p>
+    </div>
+  </div>
+</section>
+
+<section style="text-align: center; padding: 3rem 1rem; background: #f7f7f7;">
+  <h2 style="color: #007B8A;">Why Choose Sadri Health Services?</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 2rem;" class="animate-slide-up">
+    <div class="value-card"><i class="fas fa-check-circle"></i><p>30+ Years of Experience</p></div>
+    <div class="value-card"><i class="fas fa-user-friends"></i><p>Trusted by 8,000+ Patients</p></div>
+    <div class="value-card"><i class="fas fa-leaf"></i><p>Natural & Non-Invasive Care</p></div>
+    <div class="value-card"><i class="fas fa-hands-helping"></i><p>Patient-Centered Philosophy</p></div>
+  </div>
+</section>
+
+<section style="text-align: center; padding: 4rem 1rem;">
+  <h2 style="color: #007B8A;">What Our Patients Say</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;" class="animate-slide-up">
+    <div class="testimonial-card">
+      <p>“I had chronic back pain for 6 years. Thanks to their PRP & cupping therapy, I finally feel normal again!”</p>
+      <strong>– Adeel Riaz, Islamabad</strong>
+    </div>
+    <div class="testimonial-card">
+      <p>“Their homeopathic treatment was life-changing. The doctors really care about every detail.”</p>
+      <strong>– Maria Khan, Rawalpindi</strong>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section with Info and Form -->
+<section id="contact" class="contact-form" style="max-width: 1000px; display: flex; flex-wrap: wrap; gap: 2rem; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+
+  <!-- Contact Info (Left Side) -->
+  <div style="flex: 1; min-width: 250px;">
+    <h2 style="color: #007B8A; margin-bottom: 1rem;">Contact Info</h2>
+    <p><strong>Address:</strong><br>13-14, 1st Floor, Capital Trade Center, F-10 Markaz, Islamabad, Pakistan</p>
+    <div style="flex: 1; min-width: 250px;">
+  <!-- Google Map -->
+  <div style="width: 100%; height: 250px; margin-bottom: 1rem; border-radius: 6px; overflow: hidden;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.480241583022!2d73.00874167556621!3d33.696520173293074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbe6b6344eca5%3A0x38e650a1eb6e544!2sSadri%20Health%20Services%20(Holistic%20Clinic)!5e0!3m2!1sen!2s!4v1751420279121!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+    <br>
+    <p style="margin-top: 1rem;"><strong>Phone:</strong><br><a href="tel:+923336202688" style="color: #007B8A; text-decoration: none;">+92 333 6202688</a></p>
+    <p style="margin-top: 1rem;"><strong>Email:</strong><br><a href="mailto:sadrismc@gmail.com" style="color: #007B8A; text-decoration: none;">sadrismc@gmail.com</a></p>
+  </div>
+<br>
+  <!-- Contact Form (Right Side) -->
+  <div style="flex: 1; min-width: 280px;">
+    <h2 style="color: #007B8A; margin-bottom: 1rem;">Send Us a Message</h2>
+    <form action="https://formsubmit.co/sadrismc@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;" />
+      <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;" />
+      <textarea name="message" rows="4" placeholder="Your Message" required style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;"></textarea>
+      <button type="submit" style="width: 100%; background-color: #007B8A; color: #fff; border: none; padding: 0.8rem; border-radius: 6px; cursor: pointer;">Send Message</button>
+    </form>
+
+    <!-- Social Icons Below Form -->
+    <div style="margin-top: 1.5rem; text-align: center;">
+      <a href="https://www.instagram.com/sadrihealthservices?igsh=MWE0dnBocnlxNnloMA==" target="_blank" title="Instagram">
+        <i class="fab fa-instagram" style="font-size: 1.5rem; color: #C13584; margin: 0 10px;"></i>
+      </a>
+      <a href="https://www.facebook.com/share/19k5NHyg1z/" target="_blank" title="Facebook">
+        <i class="fab fa-facebook" style="font-size: 1.5rem; color: #3b5998; margin: 0 10px;"></i>
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- Chatbot Toggle Button -->
+<button id="chat-toggle">💬</button>
+
+<!-- Chatbot Window -->
+<div id="chatbot-container">
+  <div id="chat-header">
+    Sadri Health Services
+    <button onclick="toggleChat()" style="background:none;border:none;color:#fff;font-size:1.2rem;">−</button>
+  </div>
+  <div id="chat-messages"></div>
+  <div id="typing-indicator">Sadri Bot is typing...</div>
+  <div id="chat-input-area">
+    <input type="text" id="chat-input" placeholder="Type your message..." />
+    <button id="send-btn">Send</button>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sadri Health Organization. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/sadrihealthservices?igsh=MWE0dnBocnlxNnloMA==" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/19k5NHyg1z/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </footer>
+
+  <script>
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const navMenu = document.getElementById("nav-menu");
+  const icon = hamburgerBtn.querySelector("i");
+
+  hamburgerBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
+  });
+
+  document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+      icon.classList.add("fa-bars");
+      icon.classList.remove("fa-times");
+    });
+  });
+</script>
+<script>
+  function revealCardsOnScroll() {
+    const cards = document.querySelectorAll('.animate-slide-up');
+    const windowHeight = window.innerHeight;
+
+    cards.forEach(card => {
+      const elementTop = card.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 100) {
+        card.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealCardsOnScroll);
+  window.addEventListener('load', revealCardsOnScroll);
+</script>
+
+<script>
+// Counter animation
+const counters = document.querySelectorAll('.counter');
+counters.forEach(counter => {
+  counter.innerText = '0';
+  const update = () => {
+    const target = +counter.getAttribute('data-target');
+    const current = +counter.innerText;
+    const increment = target / 100;
+    if(current < target) {
+      counter.innerText = Math.ceil(current + increment);
+      setTimeout(update, 20);
+    } else {
+      counter.innerText = target;
+    }
+  };
+  update();
+});
+</script>
+
+<script>
+  const texts = ["Holistic Healing for Alll", "Trusted by 8,000+ Patientss", "30+ Years of Caree"];
+  const typingText = document.querySelector('.typing-text');
+  let index = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+    const currentText = texts[index];
+    if (isDeleting) {
+      typingText.textContent = currentText.substring(0, charIndex--);
+    } else {
+      typingText.textContent = currentText.substring(0, charIndex++);
+    }
+
+    if (!isDeleting && charIndex === currentText.length) {
+      isDeleting = true;
+      setTimeout(type, 1000);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      index = (index + 1) % texts.length;
+      setTimeout(type, 500);
+    } else {
+      setTimeout(type, isDeleting ? 40 : 100);
+    }
+  }
+
+  type();
+</script>
+
+<script>
+  const toggleBtn = document.getElementById("chat-toggle");
+  const chatContainer = document.getElementById("chatbot-container");
+  const chatMessages = document.getElementById("chat-messages");
+  const typingIndicator = document.getElementById("typing-indicator");
+  const input = document.getElementById("chat-input");
+
+  // Toggle
+function toggleChat() {
+  chatContainer.style.display = "none";
+  toggleBtn.style.display = "block"; // Show 💬 button again
+}
+  toggleBtn.onclick = () => {
+    chatContainer.style.display = "flex";
+    toggleBtn.style.display = "none";
+  };
+
+  // Load previous chat
+  window.onload = () => {
+    const history = JSON.parse(localStorage.getItem("chat-history")) || [];
+    history.forEach(msg => addMessage(msg.text, msg.type));
+  };
+
+  // Message Handler
+  document.getElementById("send-btn").onclick = sendMessage;
+  input.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") sendMessage();
+  });
+
+  function sendMessage() {
+    const message = input.value.trim();
+    if (!message) return;
+    addMessage(message, "chat-user");
+    saveChat(message, "chat-user");
+    input.value = "";
+
+    typingIndicator.style.display = "block";
+
+    setTimeout(() => {
+      const botReply = getBotReply(message);
+      addMessage(botReply, "chat-bot");
+      saveChat(botReply, "chat-bot");
+      typingIndicator.style.display = "none";
+    }, 1000);
+  }
+
+  function addMessage(text, type) {
+    const div = document.createElement("div");
+    div.className = `chat-message ${type}`;
+    div.textContent = text;
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function saveChat(text, type) {
+    const history = JSON.parse(localStorage.getItem("chat-history")) || [];
+    history.push({ text, type });
+    localStorage.setItem("chat-history", JSON.stringify(history));
+  }
+
+  function getBotReply(userMessage) {
+    const message = userMessage.toLowerCase();
+
+    const responses = {
+      "hi": "Hello! How can I assist you today?",
+      "Aoa": "Hello! How can I assist you today?",
+      "AoA": "Hello! How can I assist you today?",
+      "Asslamualikum": "Hello! How can I assist you today?",
+      "hello": "Hi there! Feel free to ask about our services.",
+      "how are you": "I'm doing well! How can I help you today?",
+      "appointment": "You can book an appointment by clicking the 'Book Appointment' button above.",
+      "services": "We offer PRP, Hijama, Acupuncture, Homeopathy, Ayurvedic Healing, and Unani Medicine.",
+      "timing": "We’re open from 9 AM to 7 PM, Monday to Saturday.",
+      "time": "We’re open from 9 AM to 7 PM, Monday to Saturday.",
+      "location": "We are located in F-10 Markaz, Office No. 13, 1st Floor of Capital Trade Center, Islamabad.",
+      "contact": "Call us at +92 333 6202688 or email at sadrismc@gmail.com.",
+      "prp": "PRP therapy helps with skin and hair rejuvenation naturally.",
+      "hijama": "Hijama improves blood flow and helps in detoxification.",
+      "homeopathy": "Homeopathy offers gentle, natural healing solutions.",
+      "acupuncture": "Acupuncture relieves pain and restores energy balance.",
+      "unani": "Unani medicine uses natural herbs and therapies.",
+      "ayurvedic": "Ayurvedic healing uses plant-based remedies for holistic care.",
+      "thank you": "You're welcome! 😊",
+      "thankyou": "You're welcome! 😊",
+      "thanks": "You're welcome! 😊",
+      "bye": "Take care! We're here whenever you need us.",
+      "dawood": "This Website is Developed by M Dawood Baig.",
+      "developer": "This Website is Developed by M Dawood Baig.",
+    };
+
+    for (let key in responses) {
+      if (message.includes(key)) return responses[key];
+    }
+
+    return "I'm not sure I understand that. Could you try asking differently?";
+  }
+</script>
+
+
+<a href="public/appointment.html" class="bya-floating">📅 Book Appointment</a>
+
+
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment - Sadri Health Services</title>
+  <link rel="icon" href="logo.ico" type="image/x-icon"/>
+  <meta name="description" content="Sadri Health Services is a professional healthcare organization based in Islamabad, Pakistan, offering trusted medical care and health consultations. Contact us for personalized healthcare solutions." />
+  <meta name="keywords" content="Sadri Health Services, Islamabad clinic, healthcare Pakistan, medical services Islamabad, Sadri Health Organization, cupping, hijjama, contact doctor, health consultation, F-10 Markaz clinic, medical center Islamabad, private clinic Pakistan, hijama, cupping, prp in isalamabad" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style copy.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar">
+  <div class="logo-container">
+    <img src="/images/logo.png" alt="Sadri 1971" class="logo" />
+  </div>
+
+  <nav id="nav-menu" class="nav-links">
+    <a href="/index.html">Home</a>
+    <a href="/index.html#about">About</a>
+    <a href="/index.html#ser">Services</a>
+    <a href="/index.html#contact">Contact</a>
+  </nav>
+
+  <div id="hamburger-btn" class="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+
+  <div class="container">
+    <a href="/index.html" class="go-back-btn">🏠 Go Back Home</a><br><br>
+    <h1>Book Your Appointment</h1>
+    <form id="appointmentForm">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="tel" name="phone" placeholder="WhatsApp Number" required />
+      <input type="email" name="email" placeholder="Email (Required)" />
+      <select name="service" required>
+        <option value="">Select Service</option>
+        <option value="PRP">PRP</option>
+        <option value="Cupping">Cupping</option>
+        <option value="Homeopathy">Homeopathy</option>
+        <option value="Diet & Nutrition">Diet & Nutrition</option>
+        <option value="Face/Skin Beauty">Face/Skin Beauty</option>
+        <option value="Infertility & Reproductive Health">Infertility & Reproductive Health</option>
+      </select>
+      <input type="date" name="date" required />
+      <input type="time" name="time" required />
+      <textarea name="notes" placeholder="Additional Notes (optional)"></textarea>
+      <button type="submit">Book Appointment</button>
+    </form>
+    <p id="responseMsg"></p>
+  </div>
+
+    <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sadri Health Organization. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/sadrihealthservices?igsh=MWE0dnBocnlxNnloMA==" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/19k5NHyg1z/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("appointmentForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      const response = await fetch("https://sadri-server.onrender.com/api/appointments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      document.getElementById("responseMsg").innerText = result.message;
+      if (result.success) this.reset();
+    });
+  </script>
+
+ <script>
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const navMenu = document.getElementById("nav-menu");
+  const icon = hamburgerBtn.querySelector("i");
+
+  hamburgerBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
+  });
+
+  document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+      icon.classList.add("fa-bars");
+      icon.classList.remove("fa-times");
+    });
+  });
+</script>
+
+</body>
+</html>
